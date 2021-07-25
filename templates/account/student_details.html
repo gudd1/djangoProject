@@ -1,0 +1,72 @@
+{% load static %}
+{% block head %}
+<!DOCTYPE html>
+<html lang="en">
+<form method="POST" action="">
+
+    {% csrf_token %}
+
+   {{ form.as_p }}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'account/ss.css' %}"/>
+</head>
+<body onload="timer(50)">
+<script type="text/javascript" charset="utf-8">
+
+let timerOn = true;
+
+function timer(remaining) {
+  //document.getElementById('resend').disabled = true;
+
+  document.getElementById('field').disabled = false;
+  //document.getElementById('submit').disabled = false;
+
+  var m = Math.floor(remaining / 60);
+  var s = remaining % 60;
+
+  m = m < 10 ? '0' + m : m;
+  s = s < 10 ? '0' + s : s;
+  //document.getElementById('timer').innerHTML = m + ':' + s;
+  document.getElementById('time_left').innerHTML = "Time left = " + m +':'+s;
+  if ((m==0 && s==0)){
+     document.getElementById('time_left').innerHTML = "Expired"
+
+     document.getElementById('field').disabled = true;
+
+
+     }
+  else{
+     document.getElementById('time_left').innerHTML = "Time left = " + m +':'+s;}
+  remaining -= 1;
+
+  if(remaining >= 0 && timerOn) {
+    setTimeout(function() {
+        timer(remaining);
+    }, 1000);
+    //return;
+  }
+
+  //if(!timerOn) {
+    // Do validate stuff here
+    //return;
+  //}
+
+  // Do timeout stuff here
+  //alert('Timeout for otp');
+} </script>
+<!---<input type=Reset onclick=timer(120)> <br>--->
+
+  <!---<hi id="timer"></hi> <br>--->
+
+<!---<div>Time left = <hi id="timer" ></hi></div>--->
+
+
+
+<input type="text" placeholder="OTP" name="otp" id="field"  class="form-control" required="required"/> <label id="time_left" style="color:wheat;">Time left =</label>
+
+</body></form>
+</html>
+{% endblock %}

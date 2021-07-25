@@ -1,0 +1,77 @@
+
+
+
+body{
+    margin:0;
+    padding: 0;
+    font-family: sans-serif;
+    background:url(Eifil.jpg) ;
+    border: 1px solid black;
+    background-size: 50%;
+}
+. {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+.trans-box {
+    margin-top: 20ch;
+    margin-left: 50ch;
+    margin-right: 50ch;
+    margin-bottom: 2ch;
+    background-color:#0c0c0cad;
+
+}
+.col-md-8{
+    margin-top: 20ch;
+    margin-inline: 20ch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: white;
+
+
+    }
+
+.col-md-8 h1{
+
+    font-size: 25px;
+    text-align: left;
+    border-bottom: 5px solid #54e454;
+    margin-bottom: 20px;
+    padding: 2px 0;
+    text-decoration-color: white;
+}
+
+.col-md-8 .form-group{
+   padding-top: 10px;
+
+}
+.col-md-8 .form-group .a-form-label{
+    font-size: 14px;
+}
+
+.warning{
+    color: white;
+    margin-top: 2ch;
+    margin-left: 10ch;
+    font-size: 15px;
+
+}
+.buttons{
+    margin-top: 2ch;
+    margin-left: 20ch;
+    padding-block: 10px;
+    }
+.buttons signup{
+    margin-left: 10ch;
+    padding-left: 5ch;
+}
+
+
+
+
+
